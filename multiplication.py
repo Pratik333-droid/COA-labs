@@ -1,5 +1,5 @@
 from addition import returnSum
-multiplicand, multiplier = "10101010", "11001100"
+multiplicand, multiplier = "101", "100"
 multiplicand_length, multiplier_length = len(multiplicand), len(multiplier)
 n = multiplicand_length if multiplicand_length > multiplier_length else multiplier_length
 a = ""
@@ -9,8 +9,10 @@ def shiftBitRight(binnum):
     return "0"+binnum
 
 for i in range(multiplier_length-1, -1, -1):
+    # print("hello")
     if multiplier[i] == "0":
         a = shiftBitRight(a)
+        # print("a = ",a)
     elif multiplier[i] == "1":
         result = returnSum(a, multiplicand.ljust(len(a), "0"))
         a = result[0]
